@@ -1,0 +1,126 @@
+name: Feature Request
+description: Suggest a new feature for pyasm6502
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please provide as much detail as possible to help us understand your request.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see.
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe why this feature would be useful and provide examples.
+      placeholder: |
+        This feature would be useful because...
+        
+        Example usage:
+        ```assembly
+        ; Show how the feature would be used
+        ```
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - New ACME directive
+        - Enhanced error reporting
+        - New output format
+        - Performance improvement
+        - New CPU support
+        - Documentation improvement
+        - Tool/utility feature
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: acme-compatibility
+    attributes:
+      label: ACME Compatibility
+      description: Does this feature exist in ACME assembler?
+      options:
+        - Yes, exists in ACME
+        - No, new feature
+        - Enhancement of existing ACME feature
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: acme-reference
+    attributes:
+      label: ACME Reference (if applicable)
+      description: If this exists in ACME, please provide reference or documentation link.
+      placeholder: Link to ACME documentation or describe ACME behavior...
+
+  - type: textarea
+    id: implementation-ideas
+    attributes:
+      label: Implementation Ideas
+      description: Any thoughts on how this might be implemented (optional).
+      placeholder: |
+        Some ideas for implementation:
+        - Add to directives.py for new directives
+        - Modify evaluator.py for expression features
+        - Update output.py for new formats
+        - etc.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would be useful
+        - High - Important for my project
+        - Critical - Blocking my work
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: Are there any alternative solutions or workarounds you've considered?
+      placeholder: |
+        Current workarounds:
+        - Using multiple assembler passes
+        - Manual preprocessing
+        - etc.
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the feature request.
+      placeholder: Add any other context or screenshots about the feature request here...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have checked if this feature exists in ACME assembler
+          required: true
+        - label: I have provided clear use cases and examples
+          required: true

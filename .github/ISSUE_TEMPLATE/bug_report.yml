@@ -1,0 +1,139 @@
+name: Bug Report
+description: Report a bug in pyasm6502
+title: "[BUG] "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please fill out the information below to help us understand and fix the issue.
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is.
+      placeholder: Describe the bug...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior.
+      placeholder: |
+        1. Create assembly file with the following code:
+        ```assembly
+        ; Your assembly code here
+        ```
+        2. Run command: `python asm6502.py your_file.asm`
+        3. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen.
+      placeholder: Describe what should happen...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened.
+      placeholder: Describe what actually happened...
+    validations:
+      required: true
+
+  - type: textarea
+    id: assembly-code
+    attributes:
+      label: Assembly Code
+      description: Minimal assembly code that reproduces the issue.
+      placeholder: |
+        ```assembly
+        !cpu 6502
+        
+        * = $C000
+        
+        start:
+            lda #$00
+            ; Add problematic code here
+            rts
+        ```
+      render: assembly
+    validations:
+      required: true
+
+  - type: textarea
+    id: command-used
+    attributes:
+      label: Command Used
+      description: The exact command you used to run the assembler.
+      placeholder: `python asm6502.py -o output.bin input.asm`
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Windows 10
+        - Windows 11
+        - macOS
+        - Ubuntu
+        - Other Linux
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python Version
+      description: What version of Python are you using?
+      placeholder: e.g., 3.9.7
+    validations:
+      required: true
+
+  - type: input
+    id: pyasm6502-version
+    attributes:
+      label: pyasm6502 Version
+      description: What version of pyasm6502 are you using? (if known)
+      placeholder: e.g., 1.0.0 or commit hash
+
+  - type: textarea
+    id: error-messages
+    attributes:
+      label: Error Messages
+      description: Any error messages or output from the assembler.
+      placeholder: Paste error messages here...
+      render: shell
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the problem here.
+      placeholder: Add any other context about the problem here...
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have searched existing issues to avoid duplicates
+          required: true
+        - label: I have tested with the latest version of pyasm6502
+          required: true
+        - label: I have provided minimal assembly code that reproduces the issue
+          required: true
